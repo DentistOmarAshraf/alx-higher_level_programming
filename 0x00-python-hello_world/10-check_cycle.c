@@ -10,8 +10,8 @@ int check_cycle(listint_t *head)
 	listint_t *ptr1 = head;
 	listint_t *ptr2 = head;
 
-	if (!ptr1)
-		return (1);
+	if (!head)
+		exit(0);
 	while (ptr1 && ptr2)
 	{
 		ptr1 = ptr1->next;
