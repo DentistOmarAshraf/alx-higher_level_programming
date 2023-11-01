@@ -36,7 +36,7 @@ int main(void)
 	cur->next = head;
 
 	if (!check_cycle(head))
-		printf("there is no cycle\n");
+		printf("there is no cycle!\n");
 	else
 		printf("positive Cycle\n");
 
