@@ -11,7 +11,7 @@ int check_cycle(listint_t *head)
 	listint_t *ptr2 = head;
 
 	if (!head)
-		exit(0);
+		return (1);
 	while (1)
 	{
 		if (!ptr1)
