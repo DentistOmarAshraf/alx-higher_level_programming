@@ -12,10 +12,12 @@ int check_cycle(listint_t *head)
 
 	if (!head)
 		exit(0);
-	while (ptr1 && ptr2)
+	while (1)
 	{
 		ptr1 = ptr1->next;
 		ptr2 = ptr2->next->next;
+		if (!ptr1 || !ptr2)
+			return (0);
 		if (ptr1 == ptr2)
 			return (1);
 	}
