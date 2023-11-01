@@ -10,8 +10,6 @@ int check_cycle(listint_t *head)
 	listint_t *the_head;
 	listint_t *cur;
 
-	if (!head)
-		exit(0);
 	the_head = head;
 	cur = head;
 	while (cur)
