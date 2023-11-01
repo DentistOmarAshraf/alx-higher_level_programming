@@ -7,14 +7,19 @@
  */
 int check_cycle(listint_t *head)
 {
-	listint_t *the_head;
+	listint_t *ptr1 = head;
+	listint_t *ptr2 = head;
 
-	the_head = head;
-	while (head)
+	if (!head)
+		return (0);
+
+	while (1)
 	{
-		head = head->next;
-		if (head == the_head)
+		ptr1 = ptr1->next;
+		ptr2 = ptr2->next->next;
+		if (!ptr1 || !ptr2)
+			return (0);
+		if (ptr1 == ptr2)
 			return (1);
 	}
-	return (0);
 }
