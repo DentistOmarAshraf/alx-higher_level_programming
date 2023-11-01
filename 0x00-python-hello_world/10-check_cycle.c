@@ -8,16 +8,12 @@
 int check_cycle(listint_t *head)
 {
 	listint_t *the_head;
-	listint_t *cur;
 
 	the_head = head;
-	cur = head;
-	while (cur)
+	while (head)
 	{
-		cur = cur->next;
-		if (!cur)
-			return (0);
-		if (cur == the_head)
+		head = head->next;
+		if (head == the_head)
 			return (1);
 	}
 	return (0);
