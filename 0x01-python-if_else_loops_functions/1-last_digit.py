@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import random
-number = random.randint(-1000, 1000)
+number = random.randint(-10000, 10000)
 str1 = "Last digit of"
 str2 = "greater than 5"
 str3 = "less than 6 and not 0"
