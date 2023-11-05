@@ -20,8 +20,10 @@ if __name__ == "__main__":
             import importlib
             opt = getattr(calculator_1, f_name)
             res = opt(int(argv[1]), int(argv[3]))
-    print("{:s} {:s} {:s} = {:d}".format(argv[1], argv[2], argv[3], res))
-    exit(0)
+            for i in range(1, 4):
+                print("{:s}".format(argv[i]), end=' ')
+            print("= {:d}".format(res))
+            exit(0)
     if i == len(opr) - 1:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
