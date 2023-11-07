@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-multiple_return = __import__('8-multiple_return').multiple_return
+multiple_return = __import__('8-multiple_returns').multiple_returns
 
 string = "At school, I learnt C!"
 length, first = multiple_return(string)
