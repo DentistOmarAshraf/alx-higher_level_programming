@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def multiple_returns(string):
-    if len(string) == 0 or string == "":
-        return (0, ' ')
+    if string == "":
+        return (0, None)
     tup = (len(string), string[0])
     return (tup)
