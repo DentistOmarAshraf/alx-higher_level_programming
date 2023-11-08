@@ -25,9 +25,8 @@ int listsize(listint_t *head)
 
 int is_palindrome(listint_t **head)
 {
-	int size_list, i, x, y;
-	listint_t *ptr1 = *head;
-	listint_t *ptr2 = *head;
+	int size_list, i, x, y, a, b;
+	listint_t *ptr = *head;
 
 	if (!*head)
 		return (1);
@@ -35,13 +34,15 @@ int is_palindrome(listint_t **head)
 	for (i = 0 ; i < listsize(*head) / 2 ; i++)
 	{
 		for (x = 0 ; x < i ; x++)
-			ptr1 = ptr1->next;
+			ptr = ptr->next;
+		a = ptr->n;
+		ptr = *head;
 		for (y = 0 ; y < size_list - 1 ; y++)
-			ptr2 = ptr2->next;
-		if (ptr1->n != ptr2->n)
+			ptr = ptr->next;
+		b = ptr->n;
+		if (a != b)
 			return (0);
-		ptr1 = *head;
-		ptr2 = *head;
+		ptr = *head;
 		size_list -= 1;
 	}
 	return (1);
