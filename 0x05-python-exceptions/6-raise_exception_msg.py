@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def raise_exception(msg=""):
     try:
-        raise TypeError(msh)
+        raise TypeError(msg)
     except TypeError:
         pass
