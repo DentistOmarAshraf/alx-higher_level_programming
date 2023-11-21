@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-def raise_exception(msg=""):
-    if msg == None or len(msg) == 0:
-        msg = ""
+def raise_exception_msg(msg=""):
     raise NameError(msg)
