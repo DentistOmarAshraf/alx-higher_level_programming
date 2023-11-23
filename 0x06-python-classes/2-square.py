@@ -27,6 +27,7 @@ class Square:
                 raise ValueError("size must be >= 0")
             except ValueError as e:
                 print(e)
+                exit(1)
 
         self._Square__size = size
         Square.__size += size
