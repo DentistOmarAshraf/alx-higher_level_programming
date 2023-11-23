@@ -42,4 +42,4 @@ class Square:
             int: the size of square
         """
         if self._Square__size is not None:
-            return self._Square__size
+            return self._Square__size ** 2
