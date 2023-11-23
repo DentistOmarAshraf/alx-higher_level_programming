@@ -17,17 +17,9 @@ class Square:
             None: construction
         """
         if not isinstance(size, int):
-            try:
-                raise TypeError("size must be an integer")
-            except TypeError as e:
-                print(e)
-                exit(1)
-        if size < 0:
-            try:
-                raise ValueError("size must be >= 0")
-            except ValueError as e:
-                print(e)
-                exit(1)
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
 
         self._Square__size = size
         Square.__size += size
