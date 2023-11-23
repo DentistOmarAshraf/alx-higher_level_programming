@@ -21,13 +21,13 @@ class Square:
                 raise TypeError("size must be an integer")
             except TypeError as e:
                 print(e)
-                exit(1)
+                return None
         if size < 0:
             try:
                 raise ValueError("size must be >= 0")
             except ValueError as e:
                 print(e)
-                exit(1)
+                return None
 
         self._Square__size = size
         Square.__size += size
