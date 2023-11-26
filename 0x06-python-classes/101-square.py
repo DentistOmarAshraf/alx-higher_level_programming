@@ -30,7 +30,7 @@ class Square:
 
         string = """"""
         if self.size == 0:
-            return str
+            return string
         for i in range(self.position[1]):
             string += "\n"
         for i in range(self.size):
