@@ -20,6 +20,28 @@ class Square:
         self.size = size
         self.position = position
 
+    def __str__(self):
+        """function to represnt the instance
+        Args:
+            param1(self): instance
+        Return:
+            String
+        """
+
+        string = """"""
+        if self.size == 0:
+            return str
+        for i in range(self.position[1]):
+            string += "\n"
+        for i in range(self.size):
+            for j in range(self.position[0]):
+                string += " "
+            for k in range(self.size):
+                string += "#"
+            if i != self.size - 1:
+                string += "\n"
+        return string
+
     def area(self):
         """Area Function
         Args:
@@ -37,7 +59,6 @@ class Square:
         Return:
             None
         """
-
         if self.size == 0:
             print("")
             return
