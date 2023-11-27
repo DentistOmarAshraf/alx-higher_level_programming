@@ -5,7 +5,7 @@
 class Rectangle:
     """class About foken Rect"""
 
-    def __init__(self, width, height):
+    def __init__(self, width=0, height=0):
         """constructor function
         Args:
             param1(self): instance
