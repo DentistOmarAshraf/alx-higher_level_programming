@@ -91,6 +91,13 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """create Square
+        Args:
+            param1(cls): class
+            param2(size): size
+        Return:
+            instance
+        """
         width = size
         height = size
         return cls(size, size)
