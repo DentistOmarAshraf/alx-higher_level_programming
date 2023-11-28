@@ -100,7 +100,7 @@ class Rectangle:
         """
         width = size
         height = size
-        return cls(size, size)
+        return cls(width, height)
 
     @property
     def height(self):
