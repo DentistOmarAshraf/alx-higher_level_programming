@@ -7,9 +7,14 @@ Matrix Divide Module
 
 
 def matrix_divided(matrix, div):
-    string = "matrix must be a matrix (list of lists) of integers/floats"
-    if not isinstance(matrix, list) or not isinstance(matrix[0], list):
-        raise TypeError(string)
+    """Function devide matrix of matrix and return the result"""
+
+    errormsg = "matrix must be a matrix (list of lists) of integers/floats"
+
+    if not isinstance(matrix, list) \
+            or len(matrix) == 0\
+            or not isinstance(matrix[0], list):
+        raise TypeError(errormsg)
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     if div == 0:
@@ -23,7 +28,7 @@ def matrix_divided(matrix, div):
         app = []
         for j in range(len(matrix[i])):
             if type(matrix[i][j]) not in [int, float]:
-                raise TypeError(string)
+                raise TypeError(errormsg)
             app.append(round(matrix[i][j] / div, 2))
         ret.append(app)
     return ret
