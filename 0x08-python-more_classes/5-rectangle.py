@@ -34,6 +34,9 @@ class Rectangle:
                 rec += '\n'
         return rec
 
+    def __del__(self):
+        print("Bye rectangle...")
+
     def __repr__(self):
         """return represntaion of instanc"""
         return f"Rectangle({self.width}, {self.height})"
