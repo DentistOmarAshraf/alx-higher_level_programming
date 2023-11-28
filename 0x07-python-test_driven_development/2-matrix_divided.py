@@ -13,6 +13,7 @@ def matrix_divided(matrix, div):
 
     if not isinstance(matrix, list) \
             or len(matrix) == 0\
+            or matrix == [[]]\
             or not isinstance(matrix[0], list):
         raise TypeError(errormsg)
     if type(div) not in [int, float]:
