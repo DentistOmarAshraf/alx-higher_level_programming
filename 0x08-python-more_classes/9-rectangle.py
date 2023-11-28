@@ -69,6 +69,17 @@ class Rectangle:
             return (self.height + self.width) * 2
         return 0
 
+    @classmethod
+    def square(cls, size=0):
+        """create Square
+        Args:
+            param1(cls): class
+            param2(size): size
+        Return:
+            instance
+        """
+        return (cls(size, size))
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """function return instance which is bigger
@@ -88,18 +99,6 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
-
-    @classmethod
-    def square(cls, size=0):
-        """create Square
-        Args:
-            param1(cls): class
-            param2(size): size
-        Return:
-            instance
-        """
-        cls.number_of_instances -= 1
-        return cls(size, size)
 
     @property
     def height(self):
