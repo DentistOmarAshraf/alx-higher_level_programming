@@ -36,7 +36,7 @@ class Rectangle:
 
     def __repr__(self):
         """return represntaion of instanc"""
-        return f"Rectangle({self.width}, {self.height}"
+        return f"Rectangle({self.width}, {self.height})"
 
     def area(self):
         """Rectangle area
