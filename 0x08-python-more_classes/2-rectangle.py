@@ -16,6 +16,17 @@ ValueError: height must be >= 0
 Traceback (most recent call last):
     ...
 TypeError: height must be an integer
+>>> my = Rectangle(2, 4)
+>>> my.area()
+8
+>>> my.perimeter()
+12
+>>> my.width = 0
+>>> my.height = 2
+>>> my.area()
+0
+>>> my.perimeter()
+0
 """
 
 
@@ -50,7 +61,9 @@ class Rectangle:
         Return:
             perimeter(int)
         """
-        return (self.height + self.width) * 2
+        if self.height and self.width:
+            return (self.height + self.width) * 2
+        return 0
 
     @property
     def height(self):
