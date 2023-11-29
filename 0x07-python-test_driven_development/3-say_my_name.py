@@ -5,8 +5,11 @@ Print Name Module
 
 """
 
+
 def say_my_name(first_name, last_name=""):
-    """function print first and last name"""
+    """
+    function print first and last name
+    """
 
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")

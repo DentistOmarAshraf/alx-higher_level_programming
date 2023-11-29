@@ -12,7 +12,7 @@ Validate cases:
 	30
 	>>> add_integer(100)
 	198
-	>>> add_integer((1, 2),10)
+	>>> add_integer((1, 2), 10)
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer

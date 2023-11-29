@@ -7,7 +7,9 @@ Matrix Divide Module
 
 
 def matrix_divided(matrix, div):
-    """Function devide matrix of matrix and return the result"""
+    """
+    Function devide matrix of matrix and return the result
+    """
 
     errormsg = "matrix must be a matrix (list of lists) of integers/floats"
 
