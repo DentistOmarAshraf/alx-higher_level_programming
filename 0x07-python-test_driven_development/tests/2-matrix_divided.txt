@@ -72,3 +72,6 @@ Validate cases:
 
 	>>> print(matrix_divided([[10, 20]], 2))
 	[[5.0, 10.0]]
+	
+	>>> print(matrix_divided([[10, 20],[30, 40]], float('inf')))
+	[[0.0, 0.0], [0.0, 0.0]]
