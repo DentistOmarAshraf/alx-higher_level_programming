@@ -20,7 +20,8 @@ def text_indentation(text):
         if text[i] in symb:
             print("")
             print("")
-            i += 1
+            if text[i + 1] == " ":
+                i += 1
             while (text[i + 1] == " "):
                 i += 1
         i += 1
