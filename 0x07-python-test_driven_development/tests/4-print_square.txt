@@ -12,7 +12,6 @@ Validate cases:
 	####
 	####
 	####
-
 	>>> print_square(10)
 	##########
 	##########
@@ -24,9 +23,7 @@ Validate cases:
 	##########
 	##########
 	##########
-
 	>>> print_square(0)
-	<BLANKLINE>
 
 	>>> print_square("omar")
 	Traceback (most recent call last):
