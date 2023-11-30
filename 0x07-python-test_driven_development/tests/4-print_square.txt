@@ -12,6 +12,7 @@ Validate cases:
 	####
 	####
 	####
+
 	>>> print_square(10)
 	##########
 	##########
@@ -23,6 +24,7 @@ Validate cases:
 	##########
 	##########
 	##########
+
 	>>> print_square(0)
 
 	>>> print_square("omar")
