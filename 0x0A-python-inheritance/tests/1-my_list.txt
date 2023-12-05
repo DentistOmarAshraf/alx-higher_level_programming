@@ -1,10 +1,10 @@
 The ``1-my_list`` module
 ========================
 
-Using ``Mylist``
+Using ``MyList``
 ----------------
 
-	>>> MyList = __import__('1-my_list').Mylist
+	>>> MyList = __import__('1-my_list').MyList
 
 Valdite Case:
 

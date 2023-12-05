@@ -4,7 +4,7 @@ MY LIST
 """
 
 
-class Mylist(list):
+class MyList(list):
     """
     My list Class inherted from list
     """
