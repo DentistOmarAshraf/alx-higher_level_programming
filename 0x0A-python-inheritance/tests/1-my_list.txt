@@ -20,3 +20,10 @@ Valdite Case:
 [1, 2, 3, 4, 5]
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+>>> new = MyList("omar")
+>>> print(new)
+[]
+>>> new = MyList("omar", 20)
+Traceback (most recent call last):
+	...
+TypeError: __init__() takes from 1 to 2 positional arguments but 3 were given

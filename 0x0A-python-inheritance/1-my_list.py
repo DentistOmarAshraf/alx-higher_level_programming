@@ -18,7 +18,8 @@ class MyList(list):
 
     @x.setter
     def x(self, arr):
-        self.__x = arr
+        if isinstance(arr, list):
+            self.__x = arr
 
     def print_sorted(self):
         print(sorted(self))
