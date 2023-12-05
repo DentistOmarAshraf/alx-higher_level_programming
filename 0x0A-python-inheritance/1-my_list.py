@@ -5,7 +5,9 @@ MY LIST
 
 
 class Mylist(list):
-    """My list Class inherted from list"""
+    """
+    My list Class inherted from list
+    """
 
     def __init__(self, arr=[]):
         self.x = arr
