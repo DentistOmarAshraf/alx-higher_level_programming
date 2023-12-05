@@ -38,10 +38,11 @@ Validate case:
 		...
 	ValueError: nada must be greater than 0
 	
-	>>> bg.integer_validator(12, "omar")
-	Traceback (most recent call last):
-		...
-	TypeError: 12 must be an integer
+	>>> bg.integer_validator("omar", 10)
+	>>> bg.name
+	'omar'
+	>>> bg.value
+	10
 
 	>>> bg.area()
 	Traceback (most recent call last):
