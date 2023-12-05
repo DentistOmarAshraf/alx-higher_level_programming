@@ -7,6 +7,9 @@ Square class inherits super Rectangle
 >>> print(s.area())
 169
 >>> s = Square("oamr")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
 """
 
 
@@ -20,4 +23,5 @@ class Square(Rectangle):
         """
         Constructor Function
         """
+        super().integer_validator('size', size)
         super().__init__(size, size)
