@@ -33,14 +33,24 @@ Validate case:
 		...
 	ValueError: omar must be greater than 0
 
+	>>> bg.integer_validator("nada", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: nada must be greater than 0
+	
+	>>> bg.integer_validator(12, "omar")
+	Traceback (most recent call last):
+		...
+	TypeError: 12 must be an integer
+
 	>>> bg.area()
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
 	
-	>>> bg.integer_validator("nada", 0)
+	>>> bg.area(98)
 	Traceback (most recent call last):
 		...
-	ValueError: nada must be greater than 0
-
+	TypeError: area() takes 1 positional argument but 2 were given
+	
 	>>> bg.integer_validator("omar", 10)
