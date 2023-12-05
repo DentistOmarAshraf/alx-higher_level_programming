@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 """
 Square class inherits super Rectangle
+>>> s = Square(13)
+>>> print(s)
+[Rectangle] 13/13
+>>> print(s.area())
+169
+>>> s = Square("oamr")
 """
 
 
