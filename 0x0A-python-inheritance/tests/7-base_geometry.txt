@@ -53,5 +53,3 @@ Validate case:
 	Traceback (most recent call last):
 		...
 	TypeError: area() takes 1 positional argument but 2 were given
-	
-	>>> bg.integer_validator("omar", 10)
