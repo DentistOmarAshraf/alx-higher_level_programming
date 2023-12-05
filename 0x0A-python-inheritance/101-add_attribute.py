@@ -6,9 +6,13 @@ function add attribute to instance
 ...     pass
 
 >>> mc = MY()
+>>> mc.name = "omar"
 >>> add_attribute(mc, "name", "Jhon")
+Traceback (most recent call last):
+    ...
+TypeError: can\'t add new attribute
 >>> print(mc.name)
-Jhon
+omar
 >>> a = "omar"
 >>> add_attribute(a, "name", "Bob")
 Traceback (most recent call last):
@@ -27,6 +31,6 @@ def add_attribute(obj, attribute, value):
     builtin = [int, float, complex, list, tuple, range, str, bytes]
     builtin2 = [bytearray, memoryview, set, frozenset, dict, bool]
     builtin = builtin + builtin2
-    if type(obj) in builtin:
+    if type(obj) in builtin or hasattr(obj, attribute):
         raise TypeError("can't add new attribute")
     setattr(obj, attribute, value)
