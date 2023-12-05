@@ -18,7 +18,8 @@ TypeError: can't add new attribute
 
 def add_attribute(obj, attribute, value):
     """fucntion to add attribute to object if itsnot a built in"""
-    if isinstance(obj, (int, float, complex, list, tuple, range, str\
-            , bytes, bytearray, memoryview, set, frozenset, dict, bool)):
+    builtin = [int, float, complex, list, tuple, range, str, bytes]
+    builtin.append([bytes, bytearray, memoryview, set, frozenset, dict, bool])
+    if type(obj) in builtin:
         raise TypeError("can't add new attribute")
     setattr(obj, attribute, value)
