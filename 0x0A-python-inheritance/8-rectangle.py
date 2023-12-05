@@ -6,6 +6,7 @@ Rectangele class Inherits BaseGeometry task 7
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """Rectangle Class inherits BaseGeometry"""
 
