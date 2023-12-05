@@ -9,10 +9,15 @@ class BaseGeometry:
     Class BaseGeometry
     """
     def area(self):
+        """
+        Public method
+        raise exception
+        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validator function
+        """
+        Validator function
         Args:
             param1(self): instance
             param2(name): must be string
