@@ -12,5 +12,5 @@ def write_file(filename="", text=""):
         param2(text): string objext
     """
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(text)
-    f.close()
+        x = f.write(text)
+    return x
