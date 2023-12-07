@@ -13,11 +13,11 @@ def pascal_triangle(x):
     new = []
     for i in range(1, x + 1):
         arr = []
-        for j in range(1, i + 1):
-            if j == base or j == i:
+        for j in range(i):
+            if j == base or j == i - 1:
                 arr.append(base)
             else:
-                arr.append(pre[j - 2] + pre[j - 1])
+                arr.append(pre[j - 1] + pre[j])
         new.append(arr)
         pre = arr
     return new
