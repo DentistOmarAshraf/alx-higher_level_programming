@@ -14,7 +14,7 @@ def pascal_triangle(x):
     for i in range(1, x + 1):
         arr = []
         for j in range(i):
-            if j == base or j == i - 1:
+            if j == 1 or j == i - 1:
                 arr.append(base)
             else:
                 arr.append(pre[j - 1] + pre[j])
