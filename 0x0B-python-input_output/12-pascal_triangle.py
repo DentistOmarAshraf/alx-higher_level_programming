@@ -9,7 +9,6 @@ Its About How to return 2d array of Pascal_Triangle
 
 def pascal_triangle(x):
     """The pascal function"""
-    base = 1
     new = []
     for i in range(1, x + 1):
         arr = []
