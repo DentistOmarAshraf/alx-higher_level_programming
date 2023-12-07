@@ -20,5 +20,6 @@ class Student:
             return self.__dict__
         dic = {}
         for item in attr:
-            dic[item] = self.__dict__[item]
+            if item in self.__dict__:
+                dic[item] = self.__dict__[item]
         return dic
