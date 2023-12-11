@@ -57,7 +57,7 @@ class Rectangle(Base):
         string += "{}/{}".format(self.width, self.height)
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update instance attribute"""
         for i in range(len(args)):
             if i == 0:
@@ -70,6 +70,16 @@ class Rectangle(Base):
                 self.x = args[i]
             if i == 4:
                 self.y = args[i]
+        if "id" in kwargs.keys():
+            self.id = kwargs['id']
+        if "width" in kwargs.keys():
+            self.width = kwargs['width']
+        if "height" in kwargs.keys():
+            self.height = kwargs['height']
+        if "x" in kwargs.keys():
+            self.x = kwargs['x']
+        if "y" in kwargs.keys():
+            self.y = kwargs['y']
 
     def area(self):
         """Function to return area of rectangle"""
