@@ -9,19 +9,19 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """constructor Function"""
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
-    def size(self, size):
-        super().width_height_validator('width', size)
-        self.__size = size
+    def size(self, value):
+        super().width_height_validator('width', value)
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """String represatation"""
         string = "[Square] ({}) ".format(self.id)
-        string += "{}/{} - {}".format(self.x, self.y, self.size)
+        string += "{}/{} - {}".format(self.x, self.y, self.width)
         return string
