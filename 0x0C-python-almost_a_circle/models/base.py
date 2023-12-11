@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Class base Module"""
+import json
 
 
 class Base:
@@ -39,3 +40,10 @@ class Base:
             raise ValueError("{} must be >= 0".format(name))
         self.name = name
         self.value = value
+
+    @staticmethod
+    def to_json_string(list_dict):
+        """function return List of dict to json string"""
+        if list_dict is None:
+            return "[]"
+        return json.dumps(list_dict)
