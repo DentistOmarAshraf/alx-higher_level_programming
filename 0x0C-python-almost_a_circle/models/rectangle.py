@@ -50,6 +50,13 @@ class Rectangle(Base):
         super().x_y_validator('y', y)
         self.__y = y
 
+    def __str__(self):
+        """function return string represent of instance"""
+        string = "[Rectangle] ({}) ".format(self.id)
+        string += "{}/{} - ".format(self.x, self.y)
+        string += "{}/{}".format(self.width, self.height)
+        return string
+
     def area(self):
         """Function to return area of rectangle"""
         return self.width * self.height
