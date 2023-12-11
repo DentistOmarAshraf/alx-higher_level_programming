@@ -49,3 +49,6 @@ class Rectangle(Base):
     def y(self, y):
         super().x_y_validator('y', y)
         self.__y = y
+
+    def area(self):
+        return self.width * self.height
