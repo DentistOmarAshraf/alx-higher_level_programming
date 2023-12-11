@@ -20,7 +20,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        self.width_height_validator('width', width)
+        super().width_height_validator('width', width)
         self.__width = width
 
     @property
@@ -29,7 +29,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        self.width_height_validator('height', height)
+        super().width_height_validator('height', height)
         self.__height = height
 
     @property
@@ -38,7 +38,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        self.x_y_validator('x', x)
+        super().x_y_validator('x', x)
         self.__x = x
 
     @property
@@ -47,21 +47,5 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        self.x_y_validator('y', y)
+        super().x_y_validator('y', y)
         self.__y = y
-
-    def width_height_validator(self, name, value):
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value < 0 or value == 0:
-            raise ValueError("{} must be > 0".format(name))
-        self.name = name
-        self.value = value
-
-    def x_y_validator(self, name, value):
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-        self.name = name
-        self.value = value

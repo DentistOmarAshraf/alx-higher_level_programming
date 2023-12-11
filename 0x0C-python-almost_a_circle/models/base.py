@@ -14,3 +14,28 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def width_height_validator(self, name, value):
+        """
+        function to validate values
+        I Used this function in class Rectangle
+        which Inherits class base
+        """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0 or value == 0:
+            raise ValueError("{} must be > 0".format(name))
+        self.name = name
+        self.value = value
+
+    def x_y_validator(self, name, value):
+        """
+        function to validate x and y
+        ALso as above I used it in class Rectangle
+        """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        self.name = name
+        self.value = value
