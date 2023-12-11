@@ -95,3 +95,13 @@ class Rectangle(Base):
             for j in range(self.width):
                 print("#", end="")
             print("")
+
+    def to_dictionary(self):
+        """function to set dictionary"""
+        new_dict = {}
+        new_dict["x"] = self.x
+        new_dict["y"] = self.y
+        new_dict["id"] = self.id
+        new_dict["height"] = self.height
+        new_dict["width"] = self.width
+        return new_dict
