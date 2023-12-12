@@ -69,5 +69,7 @@ class Base:
 
     @classmethod
     def create(cls, **dic):
-        """descrio oksd"""
-        return cls(**dic)
+        """create instance from subclass"""
+        dum = cls(1, 1)
+        dum.update(**dic)
+        return dum
