@@ -63,6 +63,18 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             h.area(10, 20)
 
+    def test_method_three(self):
+        """testing to_dictionary() method"""
+        i = Rectangle(1, 2, 3, 4, 94)
+        dic = {"x": 3, "y": 4, "id": 94, "height": 2, "width": 1}
+        self.assertEqual(i.to_dictionary(), dic)
+        i = Rectangle(1, 1)
+        dic = {"x": 0, "y": 0, "id": 7, "height": 1, "width": 1}
+        self.assertEqual(i.to_dictionary(), dic)
+        """method Error"""
+        with self.assertRaises(TypeError):
+            i.to_dictionary(1, 2)
+
 
 if __name__ == "__main__":
     unittest.main()
