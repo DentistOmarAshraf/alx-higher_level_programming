@@ -66,3 +66,7 @@ class Base:
 
         with open(fname, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(arr))
+
+    @classmethod
+    def create(cls, **dic):
+        return cls(**dic)
