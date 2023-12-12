@@ -46,10 +46,7 @@ class Base:
         """function return List of dict to json string"""
         if list_dict is None:
             return "[]"
-        string = ""
-        for i in list_dict:
-            string += json.dumps(i)
-        return string
+        return json.dumps(list_dict)
 
     @classmethod
     def save_to_file(cls, list_obj):
