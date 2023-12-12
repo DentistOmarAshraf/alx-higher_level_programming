@@ -58,11 +58,12 @@ class Test_Base(unittest.TestCase):
             Base.to_json_string()
         with self.assertRaises(TypeError):
             Base.to_json_string([], [])
-    
+
     def test_method2(self):
         """testing Base.from_json_string()"""
         self.assertEqual(Base.from_json_string("[1, 2, 3]"), [1, 2, 3])
-        self.assertEqual(Base.from_json_string('{"name":"omar"}'), {"name": "omar"})
+        string = '{"name": "omar"}'
+        self.assertEqual(Base.from_json_string(string), {"name": "omar"})
         self.assertEqual(Base.from_json_string(None), [])
 
     def test_method2_err(self):
@@ -71,6 +72,7 @@ class Test_Base(unittest.TestCase):
             Base.from_json_string("o", "n")
         with self.assertRaises(TypeError):
             Base.from_json_string()
+
 
 if __name__ == "__main__":
     unittest.main()
