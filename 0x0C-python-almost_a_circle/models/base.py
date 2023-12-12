@@ -70,6 +70,10 @@ class Base:
     @classmethod
     def create(cls, **dic):
         """create instance from subclass"""
-        dum = cls(1, 1)
+        if cls.__name__ = "Rectangle":
+            dum = cls(1, 1)
+        elif cls.__name__ = "Square":
+            dum = cls(1)
+
         dum.update(**dic)
         return dum
