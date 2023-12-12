@@ -55,7 +55,9 @@ class Base:
         if len(list_obj) != 0:
             for i in list_obj:
                 arr.append(i.to_dictionary())
-        fname = "{}.json".format(list_obj[0].__class__.__name__)
+            fname = "{}.json".format(list_obj[0].__class__.__name__)
+        if len(list_obj) == 0:
+            fname = "{}.json".format(cls.__class__.__name__)
 
         with open(fname, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(arr))
