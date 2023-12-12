@@ -82,12 +82,13 @@ class Base:
     def load_from_file(cls):
         """function to create instance from Json"""
         fname = "{}.json".format(cls.__name__)
-        
-        with open(fname, "r", encoding="utf-8") as f:
-            ls = Base.from_json_string(f.read())
-
-        arr = []
-        for i in ls:
-            if len(i.keys()) != 0:
-                arr.append(cls.create(**i))
-        return arr
+        try:
+            with open(fname, "r", encoding="utf-8") as f:
+                ls = Base.from_json_string(f.read())
+            arr = []
+            for i in ls:
+                if len(i.keys()) != 0:
+                    arr.append(cls.create(**i))
+            return arr
+        except IOError:
+            return []
