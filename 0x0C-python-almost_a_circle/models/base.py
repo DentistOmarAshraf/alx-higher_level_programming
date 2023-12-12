@@ -77,3 +77,16 @@ class Base:
 
         dum.update(**dic)
         return dum
+
+    @classmethod
+    def load_from_file(cls):
+        """function to create instance from Json"""
+        fname = "{}.json".format(cls.__name__)
+        
+        with open(fname, "r", encoding="utf-8") as f:
+            ls = Base.from_json_string(f.read())
+
+        arr = []
+        for i in ls:
+            arr.append(cls.create(**i))
+        return arr
