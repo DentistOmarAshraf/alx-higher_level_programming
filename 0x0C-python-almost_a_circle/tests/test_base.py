@@ -48,9 +48,11 @@ class Test_Base(unittest.TestCase):
 
     def test_method(self):
         """testing Base.to_json_string()"""
-        self.assertEqual(Base.to_json_string([1, 2, 3]), "[1, 2, 3]")
+        self.assertEqual(Base.to_json_string([{'id': 15}]), '[{"id": 15}]')
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string(None), "[]")
+        string = "[{\"id\": 12}]"
+        self.assertEqual(Base.to_json_string([  { 'id': 12}]), string)
 
     def test_method_err(self):
         """testing Base.to_json_string() error raises"""
