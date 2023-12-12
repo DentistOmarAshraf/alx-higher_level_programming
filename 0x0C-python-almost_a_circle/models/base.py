@@ -44,7 +44,9 @@ class Base:
     @staticmethod
     def from_json_string(string):
         """return a list of Json string reprsentation"""
-        return json.loads(string)
+        if string is not None or len(string) != 0:
+            return json.loads(string)
+        return []
 
     @staticmethod
     def to_json_string(list_dict):
