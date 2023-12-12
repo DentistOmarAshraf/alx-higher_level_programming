@@ -88,5 +88,6 @@ class Base:
 
         arr = []
         for i in ls:
-            arr.append(cls.create(**i))
+            if len(i.keys()) != 0:
+                arr.append(cls.create(**i))
         return arr
