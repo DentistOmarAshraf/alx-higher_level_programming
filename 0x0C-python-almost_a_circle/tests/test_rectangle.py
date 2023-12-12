@@ -43,6 +43,26 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(d.y, 2)
         self.assertEqual(d.id, 100)
 
+    def test_method(self):
+        """testing __str__() method"""
+        e = Rectangle(20, 10, 1, 5, 600)
+        string = "[Rectangle] (600) 1/5 - 20/10"
+        self.assertEqual(e.__str__(), string)
+        f = Rectangle(30, 40)
+        string = "[Rectangle] (6) 0/0 - 30/40"
+        self.assertEqual(f.__str__(), string)
+
+    def test_method_two(self):
+        """testing area() method"""
+        g = Rectangle(4, 8)
+        self.assertEqual(g.area(), 32)
+        h = Rectangle(17, 2)
+        """method Error"""
+        with self.assertRaises(TypeError):
+            h.area(1)
+        with self.assertRaises(TypeError):
+            h.area(10, 20)
+
 
 if __name__ == "__main__":
     unittest.main()
