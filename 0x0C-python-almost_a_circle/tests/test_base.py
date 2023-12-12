@@ -9,6 +9,7 @@ from models.rectangle import Rectangle
 class Test_Base(unittest.TestCase):
     """Base Class Tests"""
     def test_id(self):
+        """testing instance creation"""
         a = Base()
         self.assertEqual(a.id, 1)
         b = Base()
@@ -19,6 +20,7 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(c1.id, {"name": "omar"})
 
     def test_err(self):
+        """testing instance creation Error"""
         with self.assertRaises(TypeError):
             d = Base(20, 10)
         """
@@ -45,9 +47,7 @@ class Test_Base(unittest.TestCase):
             k = Rectangle(10, 20, 5, -1)
 
     def test_method(self):
-        """
-        testing Base.to_json_string()
-        """
+        """testing Base.to_json_string()"""
         self.assertEqual(Base.to_json_string([1, 2, 3]), "[1, 2, 3]")
         self.assertEqual(Base.to_json_string([]), "[]")
         self.assertEqual(Base.to_json_string(None), "[]")
@@ -60,15 +60,13 @@ class Test_Base(unittest.TestCase):
             Base.to_json_string([], [])
     
     def test_method2(self):
-        """
-        testing Base.from_json_string()
-        """
+        """testing Base.from_json_string()"""
         self.assertEqual(Base.from_json_string("[1, 2, 3]"), [1, 2, 3])
         self.assertEqual(Base.from_json_string('{"name":"omar"}'), {"name": "omar"})
         self.assertEqual(Base.from_json_string(None), [])
 
     def test_method2_err(self):
-        """Testing Base.from_json_string error raises"""
+        """Testing Base.from_json_string() error raises"""
         with self.assertRaises(TypeError):
             Base.from_json_string("o", "n")
         with self.assertRaises(TypeError):
