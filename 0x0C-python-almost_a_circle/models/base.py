@@ -52,9 +52,10 @@ class Base:
     def save_to_file(cls, list_obj):
         """function to save info of Instance into file"""
         arr = []
-        for i in list_obj:
-            arr.append(i.to_dictionary())
-        fname = "{}.json".format(list_obj[0].__class__.__name__)
+        if len(list_obj) != 0:
+            for i in list_obj:
+                arr.append(i.to_dictionary())
+        fname = "{}.json".format(cls.__class__.__name__)
 
         with open(fname, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(arr))
