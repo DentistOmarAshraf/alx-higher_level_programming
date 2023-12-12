@@ -69,4 +69,5 @@ class Base:
 
     @classmethod
     def create(cls, **dic):
+        """descrio oksd"""
         return cls(**dic)
