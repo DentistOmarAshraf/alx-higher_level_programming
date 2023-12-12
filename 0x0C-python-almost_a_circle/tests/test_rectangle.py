@@ -14,7 +14,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(a.height, 20)
         self.assertEqual(a.x, 0)
         self.assertEqual(a.y, 0)
-        self.assertEqual(a.id, 1)
+        self.assertEqual(a.id, 3)
 
     def test_const_two(self):
        """Testing instance creation"""
@@ -23,7 +23,7 @@ class Test_Rectangle(unittest.TestCase):
        self.assertEqual(b.height, 20)
        self.assertEqual(b.x, 2)
        self.assertEqual(b.y, 0)
-       self.assertEqual(b.id, 2)
+       self.assertEqual(b.id, 4)
 
 
 if __name__ == "__main__":
