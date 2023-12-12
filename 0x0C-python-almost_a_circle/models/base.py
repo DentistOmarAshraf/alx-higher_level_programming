@@ -42,6 +42,11 @@ class Base:
         self.value = value
 
     @staticmethod
+    def from_json_string(string):
+        """return a list of Json string reprsentation"""
+        return json.loads(string)
+
+    @staticmethod
     def to_json_string(list_dict):
         """function return List of dict to json string"""
         if list_dict is None:
