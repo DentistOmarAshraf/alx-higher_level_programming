@@ -43,6 +43,13 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(d.y, 2)
         self.assertEqual(d.id, 100)
 
+    def test_const_err(self):
+        """Validator test"""
+        with self.assertRaises(TypeError):
+            x = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            x = Rectangle(1, "2")
+
     def test_method(self):
         """testing __str__() method"""
         e = Rectangle(20, 10, 1, 5, 600)
