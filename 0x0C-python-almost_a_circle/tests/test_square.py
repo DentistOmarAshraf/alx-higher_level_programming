@@ -207,6 +207,9 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(a5.y, 0)
         self.assertEqual(a5.id, 24)
 
+        with self.assertRaises(TypeError):
+            a6 = Square.create(None)
+
     def test_file_creation(self):
         """Testing File Creation method in Base class"""
         with open("Rectangle.json", "a+", encoding="utf-8") as f:
