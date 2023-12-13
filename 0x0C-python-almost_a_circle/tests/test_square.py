@@ -233,5 +233,30 @@ class Test_Square(unittest.TestCase):
         self.assertIsInstance(arr[0], Rectangle)
         os.remove('Rectangle.json')
 
+    def test_file_creation(self):
+        Square.save_to_file([])
+
+        with open("Square.json", "r", encoding="utf-8") as f:
+            data = f.read()
+
+        self.assertEqual(data, "[]")
+
+        z = Square(1)
+        Square.save_to_file([z])
+        string ='[{"id": 14, "x": 0, "size": 1, "y": 0}]'
+        with open("Square.json", "r", encoding="utf-8") as f:
+            data = f.read()
+
+        self.assertEqual(data, string)
+        os.remove('Square.json')
+        arr = Square.load_from_file()
+        self.assertEqual(arr, [])
+
+        Square.save_to_file([z])
+        arr = Square.load_from_file()
+        self.assertIsInstance(arr[0], Square)
+        os.remove('Square.json')
+
+
 if __name__ == "__main__":
     unittest.main()
