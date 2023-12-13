@@ -1,0 +1,61 @@
+#!/usr/bin/python3
+"""Testing Class Square"""
+import unittest
+from unittest.mock import patch
+from models.base import Base
+from models.square import Square
+from io import StringIO
+
+
+class Test_Square(unittest.TestCase):
+    """Testing Square class"""
+    def test_const_zero(self):
+        """Testing instance creation"""
+        a = Square(1)
+        self.assertEqual(a.size, 1)
+        self.assertEqual(a.width, 1)
+        self.assertEqual(a.height, 1)
+        self.assertEqual(a.x, 0)
+        self.assertEqual(a.y, 0)
+        self.assertEqual(a.id, 13)
+
+    def test_const_one(self):
+        """Testing instance creation"""
+        b = Square(2, 1)
+        self.assertEqual(b.size, 2)
+        self.assertEqual(b.x, 1)
+        self.assertEqual(b.y, 0)
+        self.assertEqual(b.id, 11)
+
+    def test_const_two(self):
+        """Testing instance creation"""
+        c = Square(4, 1, 3)
+        self.assertEqual(c.size, 4)
+        self.assertEqual(c.x, 1)
+        self.assertEqual(c.y, 3)
+        self.assertEqual(c.id, 12)
+
+    def test_const_three(self):
+        """Testing instance creation"""
+        d = Square(10, 7, 4, 943)
+        self.assertEqual(d.size, 10)
+        self.assertEqual(d.x, 7)
+        self.assertEqual(d.y, 4)
+        self.assertEqual(d.id, 943)
+
+    def test_const_err(self):
+        """Testing instance error raises"""
+        with self.assertRaises(TypeError):
+            e = Square("1")
+        with self.assertRaises(TypeError):
+            e = Square(2, "3")
+        with self.assertRaises(TypeError):
+            e = Square(3, 3, "4")
+        with self.assertRaises(ValueError):
+            e = Square(0)
+        with self.assertRaises(ValueError):
+            e = Square(2, -1)
+        with self.assertRaises(ValueError):
+            e = Square(2, 0, -1)
+        with self.assertRaises(TypeError):
+            e = Square()
