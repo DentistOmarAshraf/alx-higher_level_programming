@@ -45,6 +45,13 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(d.y, 2)
         self.assertEqual(d.id, 100)
 
+    def test_const_err(self):
+        """testing const error"""
+        with self.assertRaises(TypeError):
+            e = Rectangle()
+        with self.assertRaises(TypeError):
+            e = Rectangle(1, 2, 3, 4, 24, 5)
+
     def test_method(self):
         """testing __str__() method"""
         e = Rectangle(20, 10, 1, 5, 600)

@@ -59,3 +59,23 @@ class Test_Square(unittest.TestCase):
             e = Square(2, 0, -1)
         with self.assertRaises(TypeError):
             e = Square()
+        with self.assertRaises(TypeError):
+            e = Square(1, 2, 3, 4, 32)
+
+    def test_method_zero(self):
+        """Testing method Square.__str__()"""
+        string = "[Square] (94) 2/3 - 1"
+        f = Square(1, 2, 3, 94)
+        self.assertEqual(f.__str__(), string)
+        string = "[Square] (14) 0/0 - 1"
+        g = Square(1)
+        self.assertEqual(g.__str__(), string)
+        string = "[Square] (15) 3/0 - 2"
+        h = Square(2, 3)
+        self.assertEqual(h.__str__(), string)
+        string = "[Square] (16) 4/5 - 2"
+        i = Square(2, 4, 5)
+        self.assertEqual(i.__str__(), string)
+        """Testing Error"""
+        with self.assertRaises(TypeError):
+            i.__str__(12)
