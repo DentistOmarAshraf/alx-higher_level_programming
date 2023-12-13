@@ -131,3 +131,17 @@ class Test_Square(unittest.TestCase):
         with patch('sys.stdout', new=StrinIO()) as dis:
             n.display()
             self.assertEqual(dis.getvalue(), string)
+
+    def more_test2(self):
+        """Testing create() method in Base Class"""
+        dic = {"width": 30, "height": 40, "x": 1}
+        x = Rectangle.create(**dic)
+        self.assertEqual(x.width, 30)
+        self.assertEqual(x.height, 40)
+        self.assertEqual(x.x, 1)
+
+        dic = {"size": 14, "x": 12, "y": 24}
+        m = Square.create(**dic)
+        self.assertEqual(m.size, 14)
+        self.assertEqual(m.x, 12)
+        self.assertEqual(m.y, 24)
