@@ -75,6 +75,32 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             i.to_dictionary(1, 2)
 
+    def test_method_four(self):
+        """testing update() method"""
+        j = Rectangle(6, 9, 4, 3, 10)
+        j.update(70)
+        self.assertEqual(j.id, 70)
+        j.update(70, 4)
+        self.assertEqual(j.width, 4)
+        j.update(70, 4, 6)
+        self.assertEqual(j.height, 6)
+        j.update(70, 4, 6, 22)
+        self.assertEqual(j.x, 22)
+        j.update(70, 4, 6, 22, 10)
+        self.assertEqual(j.y, 10)
+        j.update(id=75)
+        self.assertEqual(j.id, 75)
+        j.update(width=102)
+        self.assertEqual(j.width, 102)
+        j.update(width=200, height=150)
+        self.assertEqual(j.width, 200)
+        self.assertEqual(j.height, 150)
+        j.update(x=53)
+        self.assertEqual(j.x, 53)
+        j.update(70, y=90)
+        self.assertEqual(j.y, 90)
+        self.assertEqual(j.id, 70)
+
 
 if __name__ == "__main__":
     unittest.main()
