@@ -6,6 +6,7 @@ from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
 from io import StringIO
+import os
 
 
 class Test_Square(unittest.TestCase):
@@ -70,13 +71,13 @@ class Test_Square(unittest.TestCase):
         string = "[Square] (94) 2/3 - 1"
         f = Square(1, 2, 3, 94)
         self.assertEqual(f.__str__(), string)
-        string = "[Square] (14) 0/0 - 1"
+        string = "[Square] (15) 0/0 - 1"
         g = Square(1)
         self.assertEqual(g.__str__(), string)
-        string = "[Square] (15) 3/0 - 2"
+        string = "[Square] (16) 3/0 - 2"
         h = Square(2, 3)
         self.assertEqual(h.__str__(), string)
-        string = "[Square] (16) 4/5 - 2"
+        string = "[Square] (17) 4/5 - 2"
         i = Square(2, 4, 5)
         self.assertEqual(i.__str__(), string)
         """Testing Error"""
@@ -173,7 +174,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(mi.height, 1)
         self.assertEqual(mi.x, 0)
         self.assertEqual(mi.y, 0)
-        self.assertEqual(mi.id, 28)
+        self.assertEqual(mi.id, 29)
 
     def test_more_three(self):
         """Testing Creart() method"""
@@ -204,8 +205,24 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(a5.size, 1)
         self.assertEqual(a5.x, 0)
         self.assertEqual(a5.y, 0)
-        self.assertEqual(a5.id, 22)
+        self.assertEqual(a5.id, 23)
 
+    def test_file_creation(self):
+        """Testing File Creation method in Base class"""
+        Rectangle.save_to_file([])
+
+        with open("Rectangle.json", "r", encoding="utf-8") as f:
+            data = f.read()
+
+        self.assertEqual(data, "[]")
+        
+        Rectangle.save_to_file([Rectangle(4, 3)])
+        string = '[{"x": 0, "y": 0, "id": 14, "height": 3, "width": 4}]'
+        with open("Rectangle.json", "r", encoding="utf-8") as f:
+            data = f.read()
+
+        self.assertEqual(data, string)
+        os.remove('Rectangle.json')
 
 if __name__ == "__main__":
     unittest.main()
