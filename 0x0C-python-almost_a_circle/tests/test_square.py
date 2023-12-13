@@ -134,14 +134,32 @@ class Test_Square(unittest.TestCase):
 
     def more_test2(self):
         """Testing create() method in Base Class"""
-        dic = {"width": 30, "height": 40, "x": 1}
+        dic = {"id": 89, "width": 30, "height": 40}
         x = Rectangle.create(**dic)
         self.assertEqual(x.width, 30)
         self.assertEqual(x.height, 40)
-        self.assertEqual(x.x, 1)
+        self.assertEqual(x.id, 89)
 
-        dic = {"size": 14, "x": 12, "y": 24}
-        m = Square.create(**dic)
-        self.assertEqual(m.size, 14)
+        dic = {"id": 89, "width": 30}
+        n = Rectangle.create(**dic)
+        self.assertEqual(n.id, 89)
+        self.assertEqual(n.width, 30)
+
+        dic = {"id": 89}
+        h = Rectangle.create(**dic)
+        self.assertEqual(h.id, 89)
+
+        dic = {"id": 89, "width": 23, "height": 40, "x": 10}
+        z = Rectangle.create(**dic)
+        self.assertEqual(z.id, 89)
+        self.assertEqual(z.width, 23)
+        self.assertEqual(z.height, 40)
+        self.assertEqual(z.x, 10)
+
+        dic = {"id": 89, "width": 32, "height": 13, "x": 12, "y": 24}
+        m = Rectangle.create(**dic)
+        self.assertEqual(m.id, 89)
+        self.assertEqual(m.width, 32)
+        self.assertEqual(m.height, 13)
         self.assertEqual(m.x, 12)
         self.assertEqual(m.y, 24)
