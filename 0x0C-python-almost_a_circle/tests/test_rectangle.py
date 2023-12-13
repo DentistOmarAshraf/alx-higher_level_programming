@@ -100,6 +100,8 @@ class Test_Rectangle(unittest.TestCase):
         j.update(70, y=90)
         self.assertEqual(j.y, 90)
         self.assertEqual(j.id, 70)
+        j.update()
+        self.assertEqual(j.id, 70)
 
     def test_mothod_four_err(self):
         """testing update() Error"""
