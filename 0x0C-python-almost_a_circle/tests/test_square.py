@@ -165,6 +165,14 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(m.x, 12)
         self.assertEqual(m.y, 24)
 
+        dic = {}
+        mi = Rectangle.create(**dic)
+        self.assertEqual(mi.width, 1)
+        self.assertEqual(mi.height, 1)
+        self.assertEqual(mi.x, 0)
+        self.assertEqual(mi.y, 0)
+        self.assertEqual(mi.id, 28)
+
     def test_more_three(self):
         """Testing Creart() method"""
         dic = {"id": 90}
@@ -175,6 +183,26 @@ class Test_Square(unittest.TestCase):
         a2 = Square.create(**dic)
         self.assertEqual(a2.id, 91)
         self.assertEqual(a2.size, 14)
+
+        dic = {"id": 92, "size": 20, "x": 10}
+        a3 = Square.create(**dic)
+        self.assertEqual(a3.id, 92)
+        self.assertEqual(a3.size, 20)
+        self.assertEqual(a3.x, 10)
+
+        dic = {"id": 98, "size": 15, "x": 3, "y": 1}
+        a4 = Square.create(**dic)
+        self.assertEqual(a4.id, 98)
+        self.assertEqual(a4.size, 15)
+        self.assertEqual(a4.x, 3)
+        self.assertEqual(a4.y, 1)
+
+        dic = {}
+        a5 = Square.create(**dic)
+        self.assertEqual(a5.size, 1)
+        self.assertEqual(a5.x, 0)
+        self.assertEqual(a5.y, 0)
+        self.assertEqual(a5.id, 22)
 
 
 if __name__ == "__main__":
