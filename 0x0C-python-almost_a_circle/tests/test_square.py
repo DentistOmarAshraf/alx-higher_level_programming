@@ -62,6 +62,8 @@ class Test_Square(unittest.TestCase):
             e = Square()
         with self.assertRaises(TypeError):
             e = Square(1, 2, 3, 4, 32)
+        with self.assertRaises(ValueError):
+            e = Square(0)
 
     def test_method_zero(self):
         """Testing method Square.__str__()"""
