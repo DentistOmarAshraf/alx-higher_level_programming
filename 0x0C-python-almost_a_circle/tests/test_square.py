@@ -208,7 +208,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(a5.id, 24)
 
         with self.assertRaises(TypeError):
-            a6 = Square.create(None)
+            a6 = Square.create({},{})
 
     def test_file_creation(self):
         """Testing File Creation method in Base class"""
