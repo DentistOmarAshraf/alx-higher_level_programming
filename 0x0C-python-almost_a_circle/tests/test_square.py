@@ -109,10 +109,10 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(k.to_dictionary(), dic)
         dic = {"id": 21, "x": 0, "size": 2, "y": 1}
         lm = Square(2, 0, 1, 21)
-        self.assertEqual(l.to_dictionary(), dic)
+        self.assertEqual(lm.to_dictionary(), dic)
         """method Error"""
         with self.assertRaises(TypeError):
-            l.to_dictionary(2)
+            lm.to_dictionary(2)
 
     def more_test(self):
         """This Is Additional Tests Added
