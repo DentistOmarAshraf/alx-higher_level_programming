@@ -101,6 +101,26 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(j.y, 90)
         self.assertEqual(j.id, 70)
 
+    def test_mothod_four_err(self):
+        """testing update() Error"""
+        j = Rectangle(6, 9, 4, 3, 10)
+        with self.assertRaises(TypeError):
+            j.update(70, "i")
+        with self.assertRaises(TypeError):
+            j.update(70, 8, "h")
+        with self.assertRaises(TypeError):
+            j.update(70, 8, 9, "x")
+        with self.assertRaises(TypeError):
+            j.update(70, 8, 2, 2, "o")
+        with self.assertRaises(ValueError):
+            j.update(70, 0)
+        with self.assertRaises(ValueError):
+            j.update(70, 1, 0)
+        with self.assertRaises(ValueError):
+            j.update(70, 1, 2, -1)
+        with self.assertRaises(ValueError):
+            j.update(70, 2, 1, 0, -1)
+
 
 if __name__ == "__main__":
     unittest.main()
