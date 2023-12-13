@@ -50,7 +50,7 @@ class Test_Base(unittest.TestCase):
         with self.assertRaises(TypeError):
             i = Rectangle(10, 20, 3, "o")
         with self.assertRaises(ValueError):
-            j = Rectangle(10, 20, -1, 5)
+            j = Rectangle(10, 20, -1)
         with self.assertRaises(ValueError):
             k = Rectangle(10, 20, 5, -1)
 

@@ -214,6 +214,12 @@ class Test_Square(unittest.TestCase):
         """Testing File Creation method in Base class"""
         with open("Rectangle.json", "a+", encoding="utf-8") as f:
             pass
+        Rectangle.save_to_file(None)
+        
+        with oepn("Rectangle.json", "r", encoding="utf-8") as f:
+            data = f.read()
+        
+        self.assertEqual(data, "[]")
         
         Rectangle.save_to_file([])
 
