@@ -52,11 +52,11 @@ class Test_Square(unittest.TestCase):
         with self.assertRaises(TypeError):
             e = Square(3, 3, "4")
         with self.assertRaises(ValueError):
-            e = Square(0)
+            e = Square(-1)
         with self.assertRaises(ValueError):
             e = Square(2, -1)
         with self.assertRaises(ValueError):
-            e = Square(2, 0, -1)
+            e = Square(2, 1, -1)
         with self.assertRaises(TypeError):
             e = Square()
         with self.assertRaises(TypeError):
@@ -93,12 +93,17 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(j.y, 5)
         j.update(id=412)
         self.assertEqual(j.id, 412)
-        j.update(size=80)
+        j.update(id=412, size=80)
         self.assertEqual(j.size, 80)
-        j.update(x=45)
+        j.update(id=412, size=18, x=45)
+        self.assertEqual(j.id, 412)
+        self.assertEqual(j.size, 18)
         self.assertEqual(j.x, 45)
-        j.update(40, id=0)
-        self.assertEqual(j.id, 40)
+        j.update(id=412, size=18, x=45, y=3)
+        self.assertEqual(j.id, 412)
+        self.assertEqual(j.size, 18)
+        self.assertEqual(j.x, 45)
+        self.assertEqual(j.y, 3)
         j.update(y=73)
         self.assertEqual(j.y, 73)
 
