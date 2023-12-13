@@ -58,7 +58,9 @@ class Test_Base(unittest.TestCase):
         """testing Base.to_json_string()"""
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
-        self.assertEqual(Base.to_json_string([{'id': 15}]), '[{"id": 15}]')
+        arr = [{'id': 15}, {'name': 23}]
+        stri = '[{"id": 15}, {"name": 23}]'
+        self.assertEqual(Base.to_json_string(arr), stri)
         string = "[{\"id\": 12}]"
         self.assertEqual(Base.to_json_string([  { 'id': 12}]), string)
 
