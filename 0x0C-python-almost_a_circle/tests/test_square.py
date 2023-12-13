@@ -209,6 +209,9 @@ class Test_Square(unittest.TestCase):
 
     def test_file_creation(self):
         """Testing File Creation method in Base class"""
+        with open("Rectangle.json", "a+", encoding="utf-8") as f:
+            pass
+        
         Rectangle.save_to_file([])
 
         with open("Rectangle.json", "r", encoding="utf-8") as f:
@@ -234,6 +237,9 @@ class Test_Square(unittest.TestCase):
         os.remove('Rectangle.json')
 
     def test_file_creation(self):
+        with open("Square.json", "a+", encoding="utf-8") as f:
+            pass
+
         Square.save_to_file([])
 
         with open("Square.json", "r", encoding="utf-8") as f:
