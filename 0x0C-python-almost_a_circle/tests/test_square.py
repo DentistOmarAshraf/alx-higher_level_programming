@@ -4,6 +4,7 @@ import unittest
 from unittest.mock import patch
 from models.base import Base
 from models.square import Square
+from models.rectangle import Rectangle
 from io import StringIO
 
 
@@ -119,20 +120,20 @@ class Test_Square(unittest.TestCase):
         with self.assertRaises(TypeError):
             lm.to_dictionary(2)
 
-    def more_test(self):
+    def test_more_one(self):
         """This Is Additional Tests Added
         for Base(), Rectangle() and Square()"""
-        self.assertEqual(Base.from_json_string("[]", []))
+        self.assertEqual(Base.from_json_string("[]"), [])
         arr = [{"id": 89}]
-        self.assertEqual(Base.from_json_string('[{ "id": 89 }]', arr))
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]'), arr)
 
         n = Rectangle(2, 3, 4)
         string = "    ##\n    ##\n    ##\n"
-        with patch('sys.stdout', new=StrinIO()) as dis:
+        with patch('sys.stdout', new=StringIO()) as dis:
             n.display()
             self.assertEqual(dis.getvalue(), string)
 
-    def more_test2(self):
+    def test_more_two(self):
         """Testing create() method in Base Class"""
         dic = {"id": 89, "width": 30, "height": 40}
         x = Rectangle.create(**dic)
@@ -163,3 +164,18 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(m.height, 13)
         self.assertEqual(m.x, 12)
         self.assertEqual(m.y, 24)
+
+    def test_more_three(self):
+        """Testing Creart() method"""
+        dic = {"id": 90}
+        a1 = Square.create(**dic)
+        self.assertEqual(a1.id, 90)
+
+        dic = {"id": 91, "size": 14}
+        a2 = Square.create(**dic)
+        self.assertEqual(a2.id, 91)
+        self.assertEqual(a2.size, 14)
+
+
+if __name__ == "__main__":
+    unittest.main()
