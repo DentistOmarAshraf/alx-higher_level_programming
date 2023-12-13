@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Testing Class Rectangle"""
 import unittest
+from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
+from io import StringIO
 
 
 class Test_Rectangle(unittest.TestCase):
@@ -69,7 +71,7 @@ class Test_Rectangle(unittest.TestCase):
         dic = {"x": 3, "y": 4, "id": 94, "height": 2, "width": 1}
         self.assertEqual(i.to_dictionary(), dic)
         i = Rectangle(1, 1)
-        dic = {"x": 0, "y": 0, "id": 7, "height": 1, "width": 1}
+        dic = {"x": 0, "y": 0, "id": 8, "height": 1, "width": 1}
         self.assertEqual(i.to_dictionary(), dic)
         """method Error"""
         with self.assertRaises(TypeError):
@@ -122,6 +124,23 @@ class Test_Rectangle(unittest.TestCase):
             j.update(70, 1, 2, -1)
         with self.assertRaises(ValueError):
             j.update(70, 2, 1, 0, -1)
+
+    def test_method_five(self):
+        """testing display() method"""
+        n = Rectangle(2, 3)
+        string = "##\n##\n##\n"
+        with patch('sys.stdout', new=StringIO()) as dis:
+            n.display()
+            self.assertEqual(dis.getvalue(), string)
+
+        n = Rectangle(2, 3, 2, 2, 90)
+        string = "\n\n  ##\n  ##\n  ##\n"
+        with patch('sys.stdout', new=StringIO()) as dis:
+            n.display()
+            self.assertEqual(dis.getvalue(), string)
+        """testing Error"""
+        with self.assertRaises(TypeError):
+            n.display(1)
 
 
 if __name__ == "__main__":
