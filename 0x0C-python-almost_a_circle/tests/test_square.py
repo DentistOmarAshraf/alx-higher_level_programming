@@ -79,3 +79,26 @@ class Test_Square(unittest.TestCase):
         """Testing Error"""
         with self.assertRaises(TypeError):
             i.__str__(12)
+
+    def test_method_one(self):
+        """Testing method Square.update()"""
+        j = Square(1, 0, 0, 400)
+        j.update(314)
+        self.assertEqual(j.id, 314)
+        j.update(314, 2)
+        self.assertEqual(j.size, 2)
+        j.update(314, 2, 4)
+        self.assertEqual(j.x, 4)
+        j.update(314, 2, 4, 5)
+        self.assertEqual(j.y, 5)
+        j.update(id=412)
+        self.assertEqual(j.id, 412)
+        j.update(size=80)
+        self.assertEqual(j.size, 80)
+        j.update(x=45)
+        self.assertEqual(j.x, 45)
+        j.update(40, id=0)
+        self.assertEqual(j.id, 40)
+        j.update(y=73)
+        self.assertEqual(j.y, 73)
+
