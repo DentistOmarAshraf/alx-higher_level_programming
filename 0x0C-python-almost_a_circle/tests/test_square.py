@@ -104,12 +104,25 @@ class Test_Square(unittest.TestCase):
 
     def test_method_two(self):
         """Testing method Square.to_dictionary()"""
-        dic = {"id": 22, "x": 4, "size": 3, "y":0}
+        dic = {"id": 22, "x": 4, "size": 3, "y": 0}
         k = Square(3, 4, 0, 22)
         self.assertEqual(k.to_dictionary(), dic)
-        dic = {"id": 21, "x": 0, "size": 2, "y":1}
-        l = Square(2, 0, 1, 21)
+        dic = {"id": 21, "x": 0, "size": 2, "y": 1}
+        lm = Square(2, 0, 1, 21)
         self.assertEqual(l.to_dictionary(), dic)
         """method Error"""
         with self.assertRaises(TypeError):
             l.to_dictionary(2)
+
+    def more_test(self):
+        """This Is Additional Tests Added
+        for Base(), Rectangle() and Square()"""
+        self.assertEqual(Base.from_json_string("[]", []))
+        arr = [{"id": 89}]
+        self.assertEqual(Base.from_json_string('[{ "id": 89 }]', arr))
+
+        n = Rectangle(2, 3, 4)
+        string = "    ##\n    ##\n    ##\n"
+        with patch('sys.stdout', new=StrinIO()) as dis:
+            n.display()
+            self.assertEqual(dis.getvalue(), string)

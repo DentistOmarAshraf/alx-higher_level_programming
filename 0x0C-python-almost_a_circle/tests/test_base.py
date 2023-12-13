@@ -34,11 +34,19 @@ class Test_Base(unittest.TestCase):
             f = Rectangle(10, "b")
         with self.assertRaises(ValueError):
             g = Rectangle(0, 0)
+        with self.assertRaises(ValueError):
+            g1 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            g2 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            g3 = Rectangle(1, 0)
+        with self.assertRaises(ValueError):
+            g4 = Rectangle(0, 2)
         """
         Next -> Base.x_y_validator
         """
         with self.assertRaises(TypeError):
-            h = Rectangle(10, 20, "o", 1)
+            h = Rectangle(10, 20, "o")
         with self.assertRaises(TypeError):
             i = Rectangle(10, 20, 3, "o")
         with self.assertRaises(ValueError):
