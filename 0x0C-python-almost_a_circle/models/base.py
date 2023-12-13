@@ -92,3 +92,30 @@ class Base:
             return arr
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_obj):
+        """Function to save info of Instance into csv file"""
+        arr = []
+        if list_obj is not None:
+            for i in list_obj:
+                arr.append(i.to_dictionary())
+        fname = "{}.csv".format(cls.__name__)
+
+        with open(fname, "w") as f:
+            f.write(cls.to_json_string(arr))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """function to create instance from Csv"""
+        fname = "{}.csv".format(cls.__name__)
+        try:
+            with open(fname, "r") as f:
+                ls = Base.from_json_string(f.read())
+            arr = []
+            for i in ls:
+                if len(i.keys()) != 0:
+                    arr.append(cls.create(**i))
+            return arr
+        except IOError:
+            return []
