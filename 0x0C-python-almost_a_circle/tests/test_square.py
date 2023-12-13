@@ -102,3 +102,14 @@ class Test_Square(unittest.TestCase):
         j.update(y=73)
         self.assertEqual(j.y, 73)
 
+    def test_method_two(self):
+        """Testing method Square.to_dictionary()"""
+        dic = {"id": 22, "x": 4, "size": 3, "y":0}
+        k = Square(3, 4, 0, 22)
+        self.assertEqual(k.to_dictionary(), dic)
+        dic = {"id": 21, "x": 0, "size": 2, "y":1}
+        l = Square(2, 0, 1, 21)
+        self.assertEqual(l.to_dictionary(), dic)
+        """method Error"""
+        with self.assertRaises(TypeError):
+            l.to_dictionary(2)
