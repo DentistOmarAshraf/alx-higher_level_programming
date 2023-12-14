@@ -71,13 +71,13 @@ class Test_Square(unittest.TestCase):
         string = "[Square] (94) 2/3 - 1"
         f = Square(1, 2, 3, 94)
         self.assertEqual(f.__str__(), string)
-        string = "[Square] (16) 0/0 - 1"
+        string = "[Square] (18) 0/0 - 1"
         g = Square(1)
         self.assertEqual(g.__str__(), string)
-        string = "[Square] (17) 3/0 - 2"
+        string = "[Square] (19) 3/0 - 2"
         h = Square(2, 3)
         self.assertEqual(h.__str__(), string)
-        string = "[Square] (18) 4/5 - 2"
+        string = "[Square] (20) 4/5 - 2"
         i = Square(2, 4, 5)
         self.assertEqual(i.__str__(), string)
         """Testing Error"""
@@ -174,7 +174,7 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(mi.height, 1)
         self.assertEqual(mi.x, 0)
         self.assertEqual(mi.y, 0)
-        self.assertEqual(mi.id, 30)
+        self.assertEqual(mi.id, 32)
 
     def test_more_three(self):
         """Testing Creart() method"""
@@ -205,18 +205,18 @@ class Test_Square(unittest.TestCase):
         self.assertEqual(a5.size, 1)
         self.assertEqual(a5.x, 0)
         self.assertEqual(a5.y, 0)
-        self.assertEqual(a5.id, 24)
+        self.assertEqual(a5.id, 26)
 
         with self.assertRaises(TypeError):
             a6 = Square.create({},{})
 
-    def test_file_creation(self):
+    def test_creation(self):
         """Testing File Creation method in Base class"""
         with open("Rectangle.json", "a+", encoding="utf-8") as f:
             pass
         Rectangle.save_to_file(None)
         
-        with oepn("Rectangle.json", "r", encoding="utf-8") as f:
+        with open("Rectangle.json", "r", encoding="utf-8") as f:
             data = f.read()
         
         self.assertEqual(data, "[]")
@@ -236,7 +236,7 @@ class Test_Square(unittest.TestCase):
 
         self.assertEqual(data, string)
         os.remove('Rectangle.json')
-        
+
         arr = Rectangle.load_from_file()
         self.assertEqual(arr, [])
 
@@ -245,7 +245,7 @@ class Test_Square(unittest.TestCase):
         self.assertIsInstance(arr[0], Rectangle)
         os.remove('Rectangle.json')
 
-    def test_file_creation(self):
+    def test_creationTwo(self):
         with open("Square.json", "a+", encoding="utf-8") as f:
             pass
 
@@ -258,7 +258,7 @@ class Test_Square(unittest.TestCase):
 
         z = Square(1)
         Square.save_to_file([z])
-        string ='[{"id": 14, "x": 0, "size": 1, "y": 0}]'
+        string ='[{"id": 16, "x": 0, "size": 1, "y": 0}]'
         with open("Square.json", "r", encoding="utf-8") as f:
             data = f.read()
 
@@ -270,6 +270,13 @@ class Test_Square(unittest.TestCase):
         Square.save_to_file([z])
         arr = Square.load_from_file()
         self.assertIsInstance(arr[0], Square)
+        os.remove('Square.json')
+
+    def test_creationthree(self):
+        Square.save_to_file(None)
+        with open("Square.json", "r", encoding="utf-8") as f:
+            data = f.read()
+        self.assertEqual(data, "[]")
         os.remove('Square.json')
 
 
