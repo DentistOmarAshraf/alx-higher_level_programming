@@ -246,6 +246,7 @@ class Test_Square(unittest.TestCase):
         os.remove('Rectangle.json')
 
     def test_creationTwo(self):
+        """Testing file creation and testing data inside the file"""
         with open("Square.json", "a+", encoding="utf-8") as f:
             pass
 
@@ -273,6 +274,7 @@ class Test_Square(unittest.TestCase):
         os.remove('Square.json')
 
     def test_creationthree(self):
+        """Testing file creation and testing data inside"""
         Square.save_to_file(None)
         with open("Square.json", "r", encoding="utf-8") as f:
             data = f.read()
