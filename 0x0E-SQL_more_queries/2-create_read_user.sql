@@ -5,5 +5,4 @@ CREATE USER IF NOT EXISTS
 IDENTIFIED WITH mysql_native_password BY
 'user_0d_2_pwd';
 FLUSH PRIVILEGES;
-GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost'
-WITH GRANT OPTION;
+GRANT SELECT ON hbtn_0d_2.* TO 'user_0d_2'@'localhost';
