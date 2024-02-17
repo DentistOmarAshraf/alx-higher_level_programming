@@ -17,7 +17,7 @@ if __name__ == "__main__":
                            charset="utf8")
     cur = conn.cursor()
     search = "SELECT id, name"
-    search += " FROM states where name=\"{}\"".format(sys.argv[4])
+    search += " FROM states where name=\'{}\'".format(sys.argv[4])
     cur.execute(search)
     q_row = cur.fetchall()
 
