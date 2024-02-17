@@ -16,8 +16,9 @@ if __name__ == "__main__":
                            host="localhost",
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT id, name FROM states WHERE id>=4 ORDER BY id ASC")
+    cur.execute("SELECT id, name FROM states ORDER BY id ASC")
     q_row = cur.fetchall()
 
     for row in q_row:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
