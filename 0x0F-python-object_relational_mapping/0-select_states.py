@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""
+Connection to SQL with MySQLdb
+"""
+
+
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    """establish connection with SQL"""
     conn = MySQLdb.connect(user=sys.argv[1],
                            password=sys.argv[2],
                            db=sys.argv[3],
