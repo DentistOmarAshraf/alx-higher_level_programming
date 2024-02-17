@@ -16,7 +16,7 @@ if __name__ == "__main__":
                            host="localhost",
                            charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name= %s", (sys.argv[4],))
+    cur.execute("SELECT * FROM states WHERE name= '{}'".format(sys.argv[4]))
     q_row = cur.fetchall()
 
     for row in q_row:
