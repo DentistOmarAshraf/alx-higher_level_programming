@@ -11,6 +11,7 @@ Base = declarative_base()
 
 
 class State(Base):
+    """Model Mapping of states table"""
 
     __tablename__ = "states"
     id = Column(Integer, nullable=False, unique=True, primary_key=True)
