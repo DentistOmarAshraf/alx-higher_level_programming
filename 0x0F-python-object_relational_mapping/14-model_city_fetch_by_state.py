@@ -23,4 +23,4 @@ if __name__ == "__main__":
     qr = session.query(State, City).join(City, State.id == City.state_id)
 
     for state, city in qr:
-        print("{}: ({}) {}".format(state.name, state.id, city.name))
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
