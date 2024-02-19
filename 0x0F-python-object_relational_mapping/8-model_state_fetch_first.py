@@ -19,10 +19,10 @@ if __name__ == "__main__":
 
     """Using query.filter to fetch first state"""
 
-    all_obj = session.query(State).filter(State.id == '1').all()
+    first = session.query(State).first()
 
-    if (len(all_obj) == 0):
-        print("Nothing")
+    if first:
+        print("{}: {}".format(first.id, first.name))
     else:
-        for obj in all_obj:
-            print(f"{obj.id}: {obj.name}")
+        print("Nothing")
+    session.close()
