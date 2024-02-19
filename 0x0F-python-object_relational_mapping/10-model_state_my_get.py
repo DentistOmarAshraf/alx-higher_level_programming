@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     """start to search"""
     search = sys.argv[4]
-    
+
     try:
         obj = session.query(State).filter(State.name.like(search)).one()
         print(obj.id)
