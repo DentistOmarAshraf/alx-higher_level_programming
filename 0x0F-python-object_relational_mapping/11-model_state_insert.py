@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     """Adding to table"""
-    session.add(State(id=6, name="Louisiana"))
+    session.add(State(name="Louisiana"))
     session.commit()
 
     last = session.query(State).order_by(State.id.desc()).first()
