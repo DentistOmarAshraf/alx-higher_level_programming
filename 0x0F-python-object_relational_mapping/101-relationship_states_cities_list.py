@@ -31,6 +31,7 @@ if __name__ == "__main__":
         if state.name != nametemp:
             print(f"{state.id}: {state.name}")
             nametemp = state.name
-        print(f"\t{city.id}:{city.name}")
+            for ci in state.cities:
+                print(f"\t{ci.id}: {ci.name}")
 
     session.close()
