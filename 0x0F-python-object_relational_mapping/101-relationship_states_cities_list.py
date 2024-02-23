@@ -8,6 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
 
+
 if __name__ == "__main__":
     """Engine Start"""
     usr = sys.argv[1]
@@ -23,7 +24,7 @@ if __name__ == "__main__":
 
     state_list = session.query(State, City).join(
                  City, State.id == City.state_id).order_by(
-                 State.id, City.id).all()
+                 State.id, City.id)
 
     nametemp = ""
     for state, city in state_list:
