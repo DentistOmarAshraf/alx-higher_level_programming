@@ -15,8 +15,6 @@ if __name__ == "__main__":
     pd = sys.argv[2]
     db = sys.argv[3]
     engine = create_engine(f"mysql+mysqldb://{usr}:{pd}@localhost:3306/{db}")
-    """Loading tables"""
-    Base.metadata.create_all(engine)
 
     """Session Start"""
     Session = sessionmaker(bind=engine)
