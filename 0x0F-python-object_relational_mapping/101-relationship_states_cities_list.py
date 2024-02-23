@@ -21,10 +21,15 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_list = session.query(State).order_by(State.id).all()
-    for state in state_list:
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("\t{}:{}".format(city.id, city.name))
+    state_list = session.query(State, City).join(
+                 City, State.id == City.state_id).order_by(
+                 State.id, City.id).all()
+
+    nametemp = ""
+    for state, city in state_list:
+        if state.name != nametemp:
+            print(f"{state.id}: {state.name}")
+            nametemp = state.name
+        print(f"\t{city.id}:{city.name}")
 
     session.close()
