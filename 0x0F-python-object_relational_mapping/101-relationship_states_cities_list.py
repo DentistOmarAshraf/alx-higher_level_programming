@@ -21,7 +21,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for state in session.query(State).order_by(State.id):
-        print(f"{state.id}: {state.name}")
-        for ci in state.cities:
-            print(f"    {ci.id}: {ci.name}")
+    stname = ""
+    for ci in session.query(City).order_by(City.id):
+        if ci.state.name != stname:
+            print(f"{ci.state.id}: {ci.state.name}")
+            for ci in ci.state.cities:
+                print(f"    {ci.id}: {ci.name}")
+        stname = ci.state.name
