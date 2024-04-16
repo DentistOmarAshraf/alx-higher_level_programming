@@ -10,9 +10,12 @@ if __name__ == "__main__":
     """
     import sys
     import requests
-
-    srch = sys.argv[1]
+    
+    if sys.argv[1]:
+        srch = sys.argv[1]
+    else:
+        srch = ""
     url = "http://0.0.0.0:5000/search_user"
-    dt = {"q": sys.argv[1]}
+    dt = {"q": srch}
     res = requests.post(url, data=dt)
     print(res.text)
