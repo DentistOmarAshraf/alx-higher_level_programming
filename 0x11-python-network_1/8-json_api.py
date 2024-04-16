@@ -11,7 +11,7 @@ if __name__ == "__main__":
     import sys
     import requests
     
-    if sys.argv[1]:
+    if len(sys.argv) > 1:
         srch = sys.argv[1]
     else:
         srch = ""
