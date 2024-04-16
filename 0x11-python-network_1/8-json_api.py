@@ -16,7 +16,7 @@ if __name__ == "__main__":
         srch = sys.argv[1]
     else:
         srch = ""
-    url = "http://0.0.0.0/search_user"
+    url = "http://0.0.0.0:5000/search_user"
     dt = {"q": srch}
     res = requests.post(url, data=dt)
     try:
