@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     y = 0
     for x in data:
-        print("{}: {}".format(x["sha"], x["author"]["login"]))
+        print("{}: {}".format(x["sha"], x["commit"]["author"]["name"]))
         y += 1
         if y == 10:
             break
